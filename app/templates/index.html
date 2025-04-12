@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Tweet Classifier</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="waves-container">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card mt-5 main-card">
+                        <div class="card-header text-center">
+                            <i class="fas fa-robot robot-icon"></i>
+                            <h1>Disaster Tweet Analyzer</h1>
+                            <p class="header-subtitle">Powered by Machine Learning</p>
+                        </div>
+                        <div class="card-body">
+                            <form id="tweetForm">
+                                <div class="mb-4 input-group">
+                                    <span class="input-group-text">
+                                        <i class="fab fa-twitter twitter-icon"></i>
+                                    </span>
+                                    <textarea class="form-control custom-textarea" id="tweetText" rows="4" 
+                                        placeholder="Type your tweet here to analyze if it's about a disaster..."></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary analyze-btn">
+                                        <i class="fas fa-search-location"></i>
+                                        Analyze Tweet
+                                    </button>
+                                </div>
+                            </form>
+                            
+                            <div id="result" class="mt-4 text-center result-section" style="display: none;">
+                                <div class="prediction-box">
+                                    <h3>Prediction</h3>
+                                    <div class="prediction-result">
+                                        <span id="prediction"></span>
+                                        <i id="predictionIcon" class="fas"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="confidence-section mt-4">
+                                    <h4>Confidence Level</h4>
+                                    <div class="circular-progress">
+                                        <div class="circular-progress-inner">
+                                            <div class="circular-progress-circle">
+                                                <svg class="circular-progress-svg">
+                                                    <circle class="circular-progress-bg"></circle>
+                                                    <circle class="circular-progress-fill"></circle>
+                                                </svg>
+                                                <div class="circular-progress-text">
+                                                    <span id="probability">0</span>%
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Disaster Tweet Analyzer | AI-Powered Analysis</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html> 
