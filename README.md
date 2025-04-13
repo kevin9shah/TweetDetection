@@ -45,7 +45,7 @@ python app.py
 
 2. Open your web browser and navigate to:
 ```
-http://localhost:5000
+[http://localhost:5000](http://127.0.0.1:5000/)
 ```
 
 3. Enter a tweet in the text area and click "Analyze Tweet" to get the prediction.
